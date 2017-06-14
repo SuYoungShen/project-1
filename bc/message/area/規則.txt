@@ -1,0 +1,8 @@
+placename 地區
+viewpoint 景點名
+posted 發表人
+message 留言
+reply 回覆
+email email
+site 網址
+datetime 時間

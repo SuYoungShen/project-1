@@ -1,0 +1,7 @@
+Introduction 介紹
+place 地點
+picName 圖片名字
+path 圖片放置位子
+datetime 時間
+display 顯示
+OnlyDelete 單選刪除

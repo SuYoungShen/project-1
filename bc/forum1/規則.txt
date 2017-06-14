@@ -1,0 +1,7 @@
+discuss 討論
+theme 主題
+message 留言內容言
+posted 發表人
+reply 回覆
+frequency 次數
+datetime 時間

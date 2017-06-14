@@ -1,0 +1,7 @@
+theme 主題
+posted 發表人
+email email
+message 留言
+reply 回覆
+frequency 點擊
+datetime 時間

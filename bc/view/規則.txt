@@ -1,0 +1,4 @@
+view 景點
+viewpoint 景點名
+Attractions 景點介紹
+arrival 到達

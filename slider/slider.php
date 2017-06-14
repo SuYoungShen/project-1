@@ -13,10 +13,10 @@
         <a class="btn btn-default slider-btn animated fadeIn" href="#">Get Started</a>
       </div>
     </div>
-  </div>  
+  </div>
   <?php for ($i=1; $i < $CountSilder; $i++) {?>
 
-  <div class="item" style="background-image: url(<?php echo $sliderdir.$DisplaySlider[$i][name];?>)">
+  <div class="item" style="background-image: url(<?php echo $bc.$DisplaySlider[$i][path].$DisplaySlider[$i][name];?>)">
     <div class="carousel-caption">
       <div>
         <h2 class="heading animated bounceInDown">Get All in Onepage</h2>

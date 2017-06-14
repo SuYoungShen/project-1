@@ -162,14 +162,14 @@
 			<div class="row text-center clearfix">
 				<div class="col-sm-8 col-sm-offset-2">
 					<h2 class="title-one">熱門景點</h2>
-					<p class="blog-heading">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+					<p class="blog-heading">高雄六大熱門地區</p>
 				</div>
 			</div>
 			<div class="row">
 				<?php foreach ($DisplayTop as $key => $value) { ?>
 				<div class="col-sm-4">
 					<div class="single-blog">
-						<img src="<?php echo $TopDir.$value["name"];?>" class="img-responsive" alt="" />
+						<img src="<?php echo $bc.$DisplayTop[$key][path].$value["name"];?>" class="img-responsive" alt="" />
 						<h2>
 							<?php
 								if (empty($value["place"])) {
@@ -179,157 +179,28 @@
 							?>
 						</h2>
 						<ul class="post-meta">
-							<li><i class="fa fa-pencil-square-o"></i><strong> Posted By:</strong> John</li>
-							<li><i class="fa fa-clock-o"></i><strong> Posted On:</strong> Apr 15 2014</li>
+							<!-- <li><i class="fa fa-pencil-square-o"></i><strong> Posted By:</strong> John</li> -->
+							<li><i class="fa fa-clock-o"></i><strong> 更新日期:</strong> <?php echo $value["datetime"]; ?></li>
 						</ul>
-						<div class="blog-content">
+						<!-- <div class="blog-content">
 							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-						</div>
-						<a href="" class="btn btn-primary" data-toggle="modal" data-target="#blog-<?php echo $key;?>">Read More</a>
+						</div> -->
+						<a href="" class="btn btn-primary" data-toggle="modal" data-target="#blog-<?php echo $key;?>">放大</a>
 					</div>
 					<div class="modal fade" id="blog-<?php echo $key;?>" tabindex="-1" role="dialog" aria-hidden="true">
 						<div class="modal-dialog">
 							<div class="modal-content">
 								<div class="modal-body">
 									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-									<img src="<?php echo $TopDir.$value["name"];?>" class="img-responsive"  alt="" />
+									<img src="<?php echo $bc.$value["path"].$value["name"];?>" class="img-responsive"  alt="" />
 									<h2><?php echo $value["place"]; ?></h2>
-									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-								</div>
-							</div>
-						</div>
-					</div>
+									<!-- <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p> -->
+								</div><!--modal-body-->
+							</div><!--modal-content-->
+						</div><!--modal-dialog-->
+					</div><!--modal-->
 				</div>
 				<?php 	}  ?>
-				<!-- <div class="col-sm-4">
-					<div class="single-blog">
-						<img src="images/blog/2.jpg" alt="" />
-						<h2>Lorem ipsum dolor sit amet</h2>
-						<ul class="post-meta">
-							<li><i class="fa fa-pencil-square-o"></i><strong> Posted By:</strong> John</li>
-							<li><i class="fa fa-clock-o"></i><strong> Posted On:</strong> Apr 15 2014</li>
-						</ul>
-						<div class="blog-content">
-							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-						</div>
-						<a href="" class="btn btn-primary" data-toggle="modal" data-target="#blog-two">Read More</a>
-					</div>
-					<div class="modal fade" id="blog-two" tabindex="-1" role="dialog" aria-hidden="true">
-						<div class="modal-dialog">
-							<div class="modal-content">
-								<div class="modal-body">
-									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-									<img src="images/blog/2.jpg" alt="" />
-									<h2>Lorem ipsum dolor sit amet</h2>
-									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-4">
-					<div class="single-blog">
-						<img src="images/blog/3.jpg" alt="" />
-						<h2>Lorem ipsum dolor sit amet</h2>
-						<ul class="post-meta">
-							<li><i class="fa fa-pencil-square-o"></i><strong> Posted By:</strong> John</li>
-							<li><i class="fa fa-clock-o"></i><strong> Posted On:</strong> Apr 15 2014</li>
-						</ul>
-						<div class="blog-content">
-							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-						</div>
-						<a href="" class="btn btn-primary" data-toggle="modal" data-target="#blog-three">Read More</a>
-					</div>
-					<div class="modal fade" id="blog-three" tabindex="-1" role="dialog" aria-hidden="true">
-						<div class="modal-dialog">
-							<div class="modal-content">
-								<div class="modal-body">
-									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-									<img src="images/blog/3.jpg" alt="" />
-									<h2>Lorem ipsum dolor sit amet</h2>
-									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-4">
-					<div class="single-blog">
-						<img src="images/blog/3.jpg" alt="" />
-						<h2>Lorem ipsum dolor sit amet</h2>
-						<ul class="post-meta">
-							<li><i class="fa fa-pencil-square-o"></i><strong> Posted By:</strong> John</li>
-							<li><i class="fa fa-clock-o"></i><strong> Posted On:</strong> Apr 15 2014</li>
-						</ul>
-						<div class="blog-content">
-							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-						</div>
-						<a href="" class="btn btn-primary" data-toggle="modal" data-target="#blog-four">Read More</a></div>
-						<div class="modal fade" id="blog-four" tabindex="-1" role="dialog" aria-hidden="true">
-							<div class="modal-dialog">
-								<div class="modal-content">
-									<div class="modal-body">
-										<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-										<img src="images/blog/3.jpg" alt="" />
-										<h2>Lorem ipsum dolor sit amet</h2>
-										<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-									</div>
-								</div>
-							</div>
-						</div>
-				</div>
-				<div class="col-sm-4">
-						<div class="single-blog">
-							<img src="images/blog/2.jpg" alt="" />
-							<h2>Lorem ipsum dolor sit amet</h2>
-							<ul class="post-meta">
-								<li><i class="fa fa-pencil-square-o"></i><strong> Posted By:</strong> John</li>
-								<li><i class="fa fa-clock-o"></i><strong> Posted On:</strong> Apr 15 2014</li>
-							</ul>
-							<div class="blog-content">
-								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-							</div>
-							<a href="" class="btn btn-primary" data-toggle="modal" data-target="#blog-six">Read More</a>
-						</div>
-						<div class="modal fade" id="blog-six" tabindex="-1" role="dialog" aria-hidden="true">
-							<div class="modal-dialog">
-								<div class="modal-content">
-									<div class="modal-body">
-										<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-										<img src="images/blog/2.jpg" alt="" />
-										<h2>Lorem ipsum dolor sit amet</h2>
-										<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				<div class="col-sm-4">
-						<div class="single-blog">
-							<img src="images/blog/1.jpg" alt="" />
-							<h2>Lorem ipsum dolor sit amet</h2>
-							<ul class="post-meta">
-								<li><i class="fa fa-pencil-square-o"></i><strong> Posted By:</strong> John</li>
-								<li><i class="fa fa-clock-o"></i><strong> Posted On:</strong> Apr 15 2014</li>
-							</ul>
-							<div class="blog-content">
-								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-							</div>
-							<a href="" class="btn btn-primary" data-toggle="modal" data-target="#blog-seven">Read More</a>
-						</div>
-						<div class="modal fade" id="blog-seven" tabindex="-1" role="dialog" aria-hidden="true">
-							<div class="modal-dialog">
-								<div class="modal-content">
-									<div class="modal-body">
-										<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-										<img src="images/blog/1.jpg" alt="" />
-										<h2>Lorem ipsum dolor sit amet</h2>
-										<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div> -->
 			</div><!-- row -->
 		</div>
 	</section> <!--/#blog-->
@@ -340,29 +211,18 @@
 					<div class="row text-center">
 						<div class="col-sm-8 col-sm-offset-2">
 							<h2 class="title-one">景點</h2>
-							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit.</p>
+							<p>各地區熱門景點</p>
 						</div>
 					</div>
+
 					<ul class="portfolio-filter text-center">
 						<li><a class="btn btn-default active" href="#" data-filter="*">All</a></li>
-						<li><a class="btn btn-default" href="#" data-filter=".html">Html</a></li>
-						<li><a class="btn btn-default" href="#" data-filter=".wordpress">Wordpress</a></li>
-						<li><a class="btn btn-default" href="#" data-filter=".joomla">Joomla</a></li>
-						<li><a class="btn btn-default" href="#" data-filter=".megento">Megento</a></li>
+						<?php foreach ($DisplayPlace as $key => $value) {?>
+						<li><a class="btn btn-default" href="#" data-filter=".<?php echo $value["place"];?>"><?php echo $value["place"]; ?></a></li>
+						<?php } ?>
 					</ul><!--/#portfolio-filter-->
 					<div class="portfolio-items">
-						<div class="col-sm-3 col-xs-12 portfolio-item html">
-							<div class="view efffect">
-								<div class="portfolio-image">
-									<img src="images/portfolio/1.jpg" alt=""></div>
-									<div class="mask text-center">
-										<h3>Novel</h3>
-										<h4>Lorem ipsum dolor sit amet consectetur</h4>
-										<a href="#"><i class="fa fa-link"></i></a>
-										<a href="images/portfolio/big-item.jpg" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
-									</div>
-							</div>
-						</div>
+						<?php include 'area/area.php'; ?>
 							<div class="col-sm-3 col-xs-12 portfolio-item jooma">
 								<div class="view efffect" >
 									<div class="portfolio-image">
@@ -450,7 +310,7 @@
 											<a href="#"><i class="fa fa-link"></i></a>
 											<a href="images/portfolio/big-item.jpg" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
 										</div>
-									</div>
+								</div>
 							</div>
 							<div class="col-sm-3 col-xs-12 portfolio-item html">
 									<div class="view efffect">
@@ -489,18 +349,7 @@
 												</div>
 											</div>
 									</div>
-							<div class="col-sm-3 col-xs-12 portfolio-item megento">
-										<div class="view efffect">
-											<div class="portfolio-image">
-												<img src="images/portfolio/12.jpg" alt=""></div>
-												<div class="mask text-center">
-													<h3>Novel</h3>
-													<h4>Lorem ipsum dolor sit amet consectetur</h4>
-													<a href="#"><i class="fa fa-link"></i></a>
-													<a href="images/portfolio/big-item4.jpg" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
-												</div>
-										</div>
-									</div>
+
 					</div>
 				</div>
 			</section> <!--/#portfolio-->
@@ -520,13 +369,16 @@
 						<div class="pattern"></div>
 						<div class="row text-center clearfix">
 							<div class="col-sm-6">
-								<div class="contact-address"><address><p><span>Devs</span>Cluster</p><strong>36 North Kafrul<br>Dhaka Cantonment Area<br> Dhaka-1206, Bangladesh</strong><br><small>( Lorem ipsum dolor sit amet, consectetuer adipiscing elit )</small></address>
+								<table class="table">
+
+								</table>
+								<!-- <div class="contact-address"><address><p><span>Devs</span>Cluster</p><strong>36 North Kafrul<br>Dhaka Cantonment Area<br> Dhaka-1206, Bangladesh</strong><br><small>( Lorem ipsum dolor sit amet, consectetuer adipiscing elit )</small></address>
 									<div class="social-icons">
 										<a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a>
 										<a href="#"><i class="fa fa-google-plus"></i></a><a href="#"><i class="fa fa-dribbble"></i></a>
 										<a href="#"><i class="fa fa-linkedin"></i></a>
 									</div>
-								</div>
+								</div> -->
 							</div>
 							<div class="col-sm-6">
 								<div id="contact-form-section">

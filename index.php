@@ -37,7 +37,11 @@
 		include 'login/check_login.php';
 		Login($db);
 		Login_Out();
-
+		if (isset($_SESSION["login_account"]) && !empty($_SESSION["login_account"])) {
+         $accounts = $_SESSION["login_account"];
+      }else {
+        $accounts = "";
+      }//加入我的最愛使用
 	 ?>
 
 </head><!--/head-->
@@ -133,8 +137,10 @@
 							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
 						</div> -->
 						<a href="" class="btn btn-primary" data-toggle="modal" data-target="#blog-<?php echo $key;?>">放大</a>
-						<a href="" class="btn btn-danger" ><i class="fa fa-heart"></i></a>
-
+						<a href="" class="btn btn-danger">
+							<i class="fa fa-heart"
+								onclick="Insert('<?php echo $accounts;?>,<?php echo $value["place"]?>,<?php echo $value["name"];?>,<?php echo $DisplayTop[$key][path]?>')"></i>
+						</a>
 
 					</div>
 					<div class="modal fade" id="blog-<?php echo $key;?>" tabindex="-1" role="dialog" aria-hidden="true">
@@ -608,6 +614,7 @@
 			</div>
 		</div>
 	</footer> <!--/#footer-->
+	<script type="text/javascript" src="favorite/js/insert.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/smoothscroll.js"></script>
 	<script type="text/javascript" src="js/jquery.isotope.min.js"></script>

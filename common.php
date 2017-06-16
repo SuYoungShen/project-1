@@ -30,7 +30,7 @@ function TopSe($db)
   return $display;
 }
 
-$DisplayPlace = PlaceSe($db);
+$DisplayPlace = PlaceSe($db);//景點的地區
 function PlaceSe($db){
   $placeSe = "SELECT place FROM `places` GROUP BY place";
   $PlaceQuery = $db->query($placeSe);
@@ -38,7 +38,7 @@ function PlaceSe($db){
   return $display;
 }
 
-$DisplayPlaceSes = PlaceSes($db);
+$DisplayPlaceSes = PlaceSes($db);//景點的所有地區
 
 function PlaceSes($db){
   $placeSe = "SELECT place, viewpoint, attractions, arrival, name,path FROM `places`";
@@ -46,4 +46,13 @@ function PlaceSes($db){
   $display = $PlaceQuery->fetchAll();
   return $display;
 }
+
+$DisplayForumSe = ForumSe($db);//討論區
+function ForumSe($db)
+  {
+    $ForumSe = "SELECT theme, posted, email, message, reply, datetime From forum ORDER BY datetime DESC";
+    $ForumQuery = $db->query($ForumSe);
+    $display = $ForumQuery->fetchAll();
+    return $display;
+  }
 ?>

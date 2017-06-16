@@ -1,8 +1,8 @@
 <?php
-  $dbname = "project";
+
   include("../mysql/connect.php");
   include ("common.php");
-   $BackPage = "../../index.php";
+   $BackPage = "../../login.php";
   // if (isset($_POST["password"]) && !empty($_POST["password"])) {
   //   $accounts = $_POST["account"];
   //   $passwords = $_POST["password"];

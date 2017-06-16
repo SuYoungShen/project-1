@@ -133,9 +133,6 @@
 							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
 						</div> -->
 						<a href="" class="btn btn-primary" data-toggle="modal" data-target="#blog-<?php echo $key;?>">放大</a>
-						<a href="" class="btn btn-danger" ><i class="fa fa-heart"></i></a>
-
-
 					</div>
 					<div class="modal fade" id="blog-<?php echo $key;?>" tabindex="-1" role="dialog" aria-hidden="true">
 						<div class="modal-dialog">

@@ -4,7 +4,7 @@
   $dbname = "project";
   include ("../../mysql/connect.php");
   include ("../common.php");
-  $BackWeb="../../../forum.php";//回到哪個頁面
+  $BackWeb="../../../index.php";//回到哪個頁面
 
   $true = isset($_POST["theme"]) &&
           !empty($_POST["theme"]) &&

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
+-- version 4.6.6
 -- https://www.phpmyadmin.net/
 --
--- 主機: 127.0.0.1
--- 產生時間： 2017-02-23 08:00:57
--- 伺服器版本: 10.1.21-MariaDB
--- PHP 版本： 7.1.1
+-- 主機: localhost
+-- 產生時間： 2017-06-21 13:40:43
+-- 伺服器版本: 5.7.17-log
+-- PHP 版本： 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- 資料庫： `project`
 --
+CREATE DATABASE IF NOT EXISTS `project` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+USE `project`;
 
 -- --------------------------------------------------------
 
@@ -36,10 +38,7 @@ CREATE TABLE `about` (
 --
 
 INSERT INTO `about` (`about`, `datetime`) VALUES
-('高雄市位於臺灣西南部東經120.15度、北緯22.31度，面積為153.6029平方公里，是臺灣第二大都市，也是台灣人口密度最高與重工業最發達的都市；而位於臺灣西南部東經120.24度、北緯22.3度，面積2792.6744平方公里的高雄縣，北鄰南投縣、東鄰嘉義縣和台南市、南鄰屏東縣、東鄰花蓮縣和台東縣，為臺灣第四大都市，在2010年12月25日五都改制後與高雄市合併，並與台北市、新北市(原台北縣)、台中市、台南市並列臺灣五大直轄市。合併後的高雄市行政區域劃分除原有的楠梓區、左營區、鼓山區、三民區、苓雅區、新興區、前金區、鹽埕區、小港區、旗津區、前鎮區之外，另新增鳳山區、岡山區、旗山區、美濃區、大寮區、茄萣區、永安區、大園區、大社區、杉林區、仁武區、田寮區、燕巢區、路竹區、阿蓮區、甲仙區、大樹區、湖內區、桃源區、鳥松區、彌陀區、那瑪夏區(原三民鄉)、梓官區、內門區、茂林區、橋頭區、六龜區、林園區等共39個行政區，為五都中最多行政區的直轄市。', '2016-10-18 02:01:04'),
-('ssssss', '2016-10-18 19:47:45'),
-('高雄市位於臺灣西南部東經120.15度、北緯22.31度，面積為153.6029平方公里', '2016-11-21 15:10:56'),
-('高雄市是中華民國的直轄市，位於臺灣本島西南部的都市，由原高雄直轄市與原高雄縣於2010年12月25日合併而來。其轄域東北至中央山脈以及玉山主峰，西南至南海上之南沙太平島、中洲島，以及東沙群島。順時針方向與臺南市、嘉義縣、南投縣、花蓮縣、臺東縣、屏東縣等縣市相鄰。面積達2,952平方公里；戶籍人口約278萬人，為台灣重要的商港及軍港乃至重工業中心。', '2016-12-05 04:37:48');
+('臺灣南方最繁華的國際城市─『高雄市』，為2009世界運動會主辦城市，因受海洋氣候調節，全年陽光普照、氣候宜人，有獨特的「海洋首都」特性。近年來大力推展觀光事業，已成為全臺最美麗的城市之一。\r\n\r\n高雄除了愛河、壽山、西子灣、蓮池潭、旗津、左營舊城等知名景點外，融合了福佬人、客家人、平埔族、鄒族、魯凱族、布農族、排灣族、以及眷村文化，是個 『山、海、河港、人文、古跡』的城市。來到高雄，您不僅可以體驗自然生態、品嘗珍饈佳饌，還能欣賞客家美濃紙傘、內門宋江陣、大樹佛光山…等多元的民族文化，更別提擁有全臺最大的購物中心，及著名的觀光夜市，可說是全部旅遊元素一應俱全，實在值得您深度造訪。\r\n\r\n高雄人的熱情，就像南方和煦的陽光。誠摯的歡迎大家到高雄作客！', '2017-06-21 17:15:23');
 
 -- --------------------------------------------------------
 
@@ -89,7 +88,7 @@ CREATE TABLE `carousel` (
 --
 
 INSERT INTO `carousel` (`id`, `place`, `name`, `path`, `datetime`) VALUES
-('0', '85大樓夜景', '1.jpg', 'about/carousel/images/', '2016-11-21 15:06:32'),
+('0', '85大樓', '1.jpg', 'about/carousel/images/', '2017-06-20 21:47:07'),
 ('1', '高雄圖書總館', '6.jpg', 'about/carousel/images/', '2016-11-21 15:11:55'),
 ('2', '蓮池潭', '2.jpg', 'about/carousel/images/', '2016-11-21 15:12:05'),
 ('3', '美麗島', '3.jpg', 'about/carousel/images/', '2016-11-21 15:12:10'),
@@ -124,15 +123,9 @@ CREATE TABLE `forum` (
   `email` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `message` varchar(1000) COLLATE utf8_unicode_ci NOT NULL,
   `reply` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `acccount` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `datetime` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- 資料表的匯出資料 `forum`
---
-
-INSERT INTO `forum` (`id`, `theme`, `posted`, `email`, `message`, `reply`, `datetime`) VALUES
-(4, '網站', '蘇湧盛', 'd7339803@gmail.com', '網站很讚哦~', '謝謝', '2016-12-05 04:56:20');
 
 -- --------------------------------------------------------
 
@@ -157,7 +150,8 @@ CREATE TABLE `member` (
 
 INSERT INTO `member` (`id`, `account`, `password`, `email`, `name`, `level`, `datetime`, `jointime`) VALUES
 (1, 'admin', 'admin', '', '', 'admin', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(2, 'ssss', 'sssss', 'sss@gmail.com', 'ssss', 'member', '2017-02-22 15:24:49', '0000-00-00 00:00:00');
+(11, 'aaaaa', 'aaaaa', 'd7339803@gmail.com', '蘇湧盛', 'member', '2017-06-21 15:44:08', '0000-00-00 00:00:00'),
+(12, 'bbbb', 'bbbbb', 'aa@dc.dom', 'a', 'member', '2017-06-21 15:57:03', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -179,9 +173,8 @@ CREATE TABLE `place` (
 --
 
 INSERT INTO `place` (`id`, `place`, `Introduction`, `name`, `path`, `datetime`) VALUES
-(38, '苓雅區', '苓雅區為臺灣高雄市一市轄區，位於市內西南部，市中心中部，北臨三民區，西北連新興區、前金區，西隔愛河與鹽埕區、鼓山區為界，南接前鎮區，東鄰鳳山區，是高雄市政府四維行政中心的所在地。', '1.jpg', 'about/place/images/', '2016-11-21 17:05:03'),
-(39, '鳥松區', '鳥松濕地公園位於澄清湖風景區門口東側，原本是自來水公司澄清湖淨水場的沉沙地，於1999年動工、2000年完工成為台灣第一座以人工濕地為主題的自然生態公園；鳥松濕地公園佔地約為3公頃，陸地和水路面積各占三分之一和三分之二，豐富的地形地貌孕育出許多種植物，包含約90種鳥類、250種以上的昆蟲和340種以上的植物，加上鄰近澄清湖因此是高雄是相當不錯的戶外教學和自然觀察的好場所，目前鳥松濕地公園社團法人高雄市野鳥學會所認養。', '7.jpg', 'about/place/images/', '2016-11-28 02:48:29'),
-(40, 'TEST', 'TEST', '', 'about/place/images/', '2016-12-08 14:06:07');
+(38, '苓雅區', '', '1.jpg', 'about/place/images/', '2016-11-21 17:05:03'),
+(39, '鳥松區', '', '7.jpg', 'about/place/images/', '2016-11-28 02:48:29');
 
 -- --------------------------------------------------------
 
@@ -205,10 +198,8 @@ CREATE TABLE `places` (
 --
 
 INSERT INTO `places` (`id`, `place`, `viewpoint`, `attractions`, `arrival`, `name`, `path`, `datetime`) VALUES
-(39, '苓雅區', '85大樓', '高雄85大樓位於高雄市苓雅區東側為自強路，南側為新光路，北側為三多路，西邊只隔半條街與成功路相毗鄰，與高雄港、高雄市小港機場、高雄市火車站和新光碼頭距離相近，又稱東帝士85國際廣場或東帝士建臺大樓，於西元1997年完工、由建築師李祖原設計，是南台灣最高的摩天大樓、全台灣第2高樓，目前是世界第13高的摩天大樓。', '★ 搭乘大眾運輸：1、捷運：(1)、搭乘捷運紅線至R8三多商圈站，出2號出口往新光路方向步行約8分鐘即可抵達。', '1.jpg', 'view/place/images/', '2016-12-07 13:56:28'),
-(40, '鳥松區', '澄清湖', '鳥松濕地公園位於澄清湖風景區門口東側，原本是自來水公司澄清湖淨水場的沉沙地，於1999年動工、2000年完工成為台灣第一座以人工濕地為主題的自然生態公園；鳥松濕地公園佔地約為3公頃，陸地和水路面積各占三分之一和三分之二，豐富的地形地貌孕育出許多種植物，包含約90種鳥類、250種以上的昆蟲和340種以上的植物，加上鄰近澄清湖因此是高雄是相當不錯的戶外教學和自然觀察的好場所，目前鳥松濕地公園社團法人高雄市野鳥學會所認養。', '自行開車：\n\n高雄交流道下，大順路轉右，左轉澄清路，即可抵達澄清湖。', '7.jpg', 'view/place/images/', '2016-12-07 13:56:11'),
-(46, '苓雅區', 'ss', 'ss', 'ss', '', '', '2016-12-10 21:56:14'),
-(47, '鳥松區', 'test', 'tes', 'tes', '', '', '2016-12-11 00:07:22');
+(48, '苓雅區', '85大樓', '高雄85大樓位於高雄市苓雅區東側為自強路，南側為新光路，北側為三多路，西邊只隔半條街與成功路相毗鄰，與高雄港、高雄市小港機場、高雄市火車站和新光碼頭距離相近，又稱東帝士85國際廣場或東帝士建臺大樓，於西元1997年完工、由建築師李祖原設計，是南台灣最高的摩天大樓、全台灣第2高樓，目前是世界第13高的摩天大樓。', '★ 搭乘大眾運輸：1、捷運：(1)、搭乘捷運紅線至R8三多商圈站，出2號出口往新光路15:40 2017/6/21方向步行約8分鐘即可抵達。', '1.jpg', 'view/place/images/', '2017-06-21 17:21:27'),
+(49, '鳥松區', '澄清湖', '澄清湖原名「大埤」，係曹公圳之一支流，初為調節農田灌溉之用。至日本據台末期，為因應軍事及重工業生產用水需要，乃於民國29年開始利用曹公圳，將原水引儲湖內，並增建供水設備。 本省光復之後，於民國36年奉省令成立「高雄工業給水工務所」，開始整修設備，恢復供水，惟大部分土地被附近居民佔用濫墾，樹木多被砍伐，大量泥沙淤積，每日出水量不足1萬公噸，僅維持聯勤兵工廠，台灣鋁廠及台肥等工業用水。', '自行開車：高雄交流道下，大順路轉右，左轉澄清路，即可抵達澄清湖。', '2.jpg', 'view/place/images/', '2017-06-21 17:23:54');
 
 -- --------------------------------------------------------
 
@@ -228,12 +219,12 @@ CREATE TABLE `slider` (
 --
 
 INSERT INTO `slider` (`id`, `name`, `path`, `datetime`) VALUES
-('0', '1.jpg', 'index/slider/images/', '2016-12-11 17:48:41'),
-('1', '2.jpg', 'index/slider/images/', '2016-12-11 17:49:50'),
-('2', '3.jpg', 'index/slider/images/', '2016-12-11 17:49:50'),
-('3', '4.jpg', 'index/slider/images/', '2016-12-11 17:49:50'),
-('4', '5.jpg', 'index/slider/images/', '2016-12-11 17:49:50'),
-('5', '6.jpg', 'index/slider/images/', '2016-12-11 17:49:50');
+('0', '1.jpg', 'index/slider/images/', '2017-06-20 21:55:03'),
+('1', '3.jpg', 'index/slider/images/', '2017-06-20 21:55:03'),
+('2', '4.jpg', 'index/slider/images/', '2017-06-20 21:55:03'),
+('3', '5.jpg', 'index/slider/images/', '2017-06-20 21:55:04'),
+('4', '6.jpg', 'index/slider/images/', '2017-06-20 21:55:04'),
+('5', '8.jpg', 'index/slider/images/', '2017-06-20 21:55:04');
 
 -- --------------------------------------------------------
 
@@ -254,12 +245,12 @@ CREATE TABLE `top` (
 --
 
 INSERT INTO `top` (`id`, `place`, `name`, `path`, `datetime`) VALUES
-('0', '', '115431.jpg', 'index/top6/images/', '2017-02-23 09:12:35'),
-('1', '', '2.jpg', 'index/top6/images/', '2016-12-11 17:32:58'),
-('2', '', '3.jpg', 'index/top6/images/', '2016-12-11 17:32:58'),
-('3', '', '4.jpg', 'index/top6/images/', '2016-12-11 17:32:58'),
-('4', '', '5.jpg', 'index/top6/images/', '2016-12-11 17:32:58'),
-('5', '', '6.jpg', 'index/top6/images/', '2016-12-11 17:32:58');
+('0', '85大樓夜景', '1.jpg', 'index/top6/images/', '2017-06-20 21:57:09'),
+('1', '愛河夜景', '4.jpg', 'index/top6/images/', '2017-06-20 21:57:21'),
+('2', '真愛碼頭', '5.jpg', 'index/top6/images/', '2017-06-20 21:57:27'),
+('3', '圖書總館', '6.jpg', 'index/top6/images/', '2017-06-20 21:57:37'),
+('4', '彩虹教堂', '8.jpg', 'index/top6/images/', '2017-06-20 21:57:50'),
+('5', '駁二', '9.jpg', 'index/top6/images/', '2017-06-20 21:57:55');
 
 -- --------------------------------------------------------
 
@@ -307,28 +298,39 @@ ALTER TABLE `carousel`
   ADD PRIMARY KEY (`id`);
 
 --
+-- 資料表索引 `favorite`
+--
+ALTER TABLE `favorite`
+  ADD KEY `account` (`Account`);
+
+--
 -- 資料表索引 `forum`
 --
 ALTER TABLE `forum`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `login_acccount` (`acccount`);
 
 --
 -- 資料表索引 `member`
 --
 ALTER TABLE `member`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `account` (`account`),
+  ADD KEY `account_2` (`account`);
 
 --
 -- 資料表索引 `place`
 --
 ALTER TABLE `place`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `place` (`place`);
 
 --
 -- 資料表索引 `places`
 --
 ALTER TABLE `places`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `place` (`place`);
 
 --
 -- 資料表索引 `slider`
@@ -350,27 +352,49 @@ ALTER TABLE `top`
 -- 使用資料表 AUTO_INCREMENT `area`
 --
 ALTER TABLE `area`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- 使用資料表 AUTO_INCREMENT `forum`
 --
 ALTER TABLE `forum`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
 -- 使用資料表 AUTO_INCREMENT `member`
 --
 ALTER TABLE `member`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- 使用資料表 AUTO_INCREMENT `place`
 --
 ALTER TABLE `place`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
 --
 -- 使用資料表 AUTO_INCREMENT `places`
 --
 ALTER TABLE `places`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+--
+-- 已匯出資料表的限制(Constraint)
+--
+
+--
+-- 資料表的 Constraints `favorite`
+--
+ALTER TABLE `favorite`
+  ADD CONSTRAINT `account` FOREIGN KEY (`Account`) REFERENCES `member` (`account`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- 資料表的 Constraints `forum`
+--
+ALTER TABLE `forum`
+  ADD CONSTRAINT `login_acccount` FOREIGN KEY (`acccount`) REFERENCES `member` (`account`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- 資料表的 Constraints `places`
+--
+ALTER TABLE `places`
+  ADD CONSTRAINT `place` FOREIGN KEY (`place`) REFERENCES `place` (`place`) ON DELETE CASCADE ON UPDATE CASCADE;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

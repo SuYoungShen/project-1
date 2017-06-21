@@ -32,7 +32,7 @@
 
 	<?php
 		session_start();
-		include 'bc/connect/connect.php';
+		include 'bc/mysql/connect.php';
 		include 'common.php';
 		include 'login/check_login.php';
 		Login($db);
@@ -42,7 +42,7 @@
       }else {
         $accounts = "";
       }//加入我的最愛使用
-		
+
 	 ?>
 
 </head><!--/head-->

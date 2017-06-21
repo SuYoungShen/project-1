@@ -9,7 +9,7 @@
     $placeName = $_POST["placeName"];//地點
     $picName = $_POST["picName"];//照片名
     $picDir = $_POST["picDir"];//照片位置
-    $WebSite = $_POST["WebSite"];//照片的網站
+    // $WebSite = $_POST["WebSite"];//照片的網站
 
     date_default_timezone_set('Asia/Taipei');//設定時間為台北
     $datetime = date("Y-m-d H:i:s");//時間
@@ -20,32 +20,30 @@
                           $placeName,
                           $picName,
                           $picDir,
-                          $WebSite,
+                          // $WebSite,
                           $datetime
                         )
                       );
     if ($trues) {
       echo "已加入最愛";
     }else {
-      echo "失敗";
+      echo "加入失敗";
     }
   }
 
-  function Insert($account, $placeName, $picName, $picDir, $WebSite, $datetime){
+  function Insert($account, $placeName, $picName, $picDir, $datetime){
 
     $favorite = "INSERT INTO `favorite`(
                                         `Account`,
                                         `place`,
                                         `PicName`,
                                         `PicPath`,
-                                        `WebSite`,
                                         `Datetime`
                                       ) VALUES (
                                         '".$account."',
                                         '".$placeName."',
                                         '".$picName."',
                                         '".$picDir."',
-                                        '".$WebSite."',
                                         '".$datetime."'
                                       )";
     return $favorite;

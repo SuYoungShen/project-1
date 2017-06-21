@@ -1,12 +1,11 @@
 <?php
   $dbname="project";
   include ("mysql/connect.php");
+  include ("common.php");
 
   $placeSe = $db->query(PlaceSe());//查詢資料表
   $display = $placeSe->fetchAll();
   $picDir = "about/place/images/";
-
-
 
     // if(isset($_POST["placeName"]) && isset($_POST["Introduction"])) {
   if (isset($_POST["update"])) {

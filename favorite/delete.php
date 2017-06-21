@@ -10,8 +10,8 @@
           !empty($_POST["PicName"]) &&
           isset($_POST["PicPath"]) &&
           !empty($_POST["PicPath"]) &&
-          isset($_POST["WebSite"]) &&
-          !empty($_POST["WebSite"]) ;
+          isset($_POST["Datetime"]) &&
+          !empty($_POST["Datetime"]) ;
 
   if ($true) {
 
@@ -19,7 +19,7 @@
     $Place_Name = $_POST["Place_Name"];
     $PicName = $_POST["PicName"];
     $PicPath = $_POST["PicPath"];
-    $WebSite = $_POST["WebSite"];
+    $Datetime = $_POST["Datetime"];
 
     $trues = $db->query(
                         FavDe(
@@ -27,7 +27,7 @@
                           $Place_Name,
                           $PicName,
                           $PicPath,
-                          $WebSite
+                          $Datetime
                         )
                       );
 
@@ -40,13 +40,13 @@
     echo "沒值~是要刪什麼~~~";
   }
 
-  function FavDe($Account, $Place_Name, $PicName, $PicPath, $WebSite){
+  function FavDe($Account, $Place_Name, $PicName, $PicPath, $Datetime){
     $FavDe = "DELETE FROM `favorite` WHERE
                                           `Account` = '".$Account."' AND
                                           `place` = '".$Place_Name."' AND
-                                          `PicName` = '".$PicName."' AND                                          
+                                          `PicName` = '".$PicName."' AND
                                           `PicPath` = '".$PicPath."' AND
-                                          `WebSite` = '".$WebSite."'
+                                          `Datetime` = '".$Datetime."'
                                           ";
     return $FavDe;
   }

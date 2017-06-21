@@ -59,6 +59,8 @@
     return $placeIn;
   }
 
+
+
   function PlaceIns($placeName,$viewpoint,$attractions,$arrival,$datetime)
   {
     $placeIn ="INSERT INTO `places`

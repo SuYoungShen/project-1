@@ -1,7 +1,7 @@
 <script type="text/javascript" src="../../assets/js/alert.js"></script>
 
 <?php
-  $dbname = "project";
+  // $dbname = "project";
   include ("../../mysql/connect.php");
   include ("../common.php");
   $BackWeb="../../../index.php";//回到哪個頁面
@@ -13,27 +13,28 @@
           isset($_POST["email"]) &&
           !empty($_POST["email"]) &&
           isset($_POST["message"]) &&
-          !empty($_POST["message"])
-          ;
+          !empty($_POST["message"]);
 
   if ($true) {
 
-    $theme = trim($_POST["theme"]);//網址
-    $posted = trim($_POST["posted"]);//發表人
-    $email = trim($_POST["email"]);//email
-    $message = trim($_POST["message"]);//留言
+     $theme = trim($_POST["theme"]);//網址
+     $posted = trim($_POST["posted"]);//發表人
+     $email = trim($_POST["email"]);//email
+     $message = trim($_POST["message"]);//留言
+     $login_account = trim($_POST["login_account"]);//登入者的帳號
     // $datetime=$_COOKIE["datetime"];//時間
     date_default_timezone_set('Asia/Taipei');//設定時間為台北
     $datetime = date("Y-m-d H:i:s");//時間
 
     // $trues=$db->query(ForumIn($theme, $posted, $email));
 
-      $trues=$db->query(
+      $trues = $db->query(
                         ForumIn(
                                 $theme,
                                 $posted,
                                 $email,
                                 $message,
+                                $login_account,
                                 $datetime
                               )
                         );

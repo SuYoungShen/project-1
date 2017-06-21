@@ -15,7 +15,7 @@ $DisplayAbout = AboutSe($db);//查詢高雄簡介
 
 function AboutSe($db)
 {
-  $about = "SELECT about From `about`";
+  $about = "SELECT about From `about`  GROUP BY datetime DESC";
   $AboutQuery = $db->query($about);
   $display = $AboutQuery->fetch();
   return $display;
@@ -47,12 +47,27 @@ function PlaceSes($db){
   return $display;
 }
 
-$DisplayForumSe = ForumSe($db);//討論區
+$DisplayForumSe = ForumSe($db);//前台討論區
 function ForumSe($db)
-  {
-    $ForumSe = "SELECT theme, posted, email, message, reply, datetime From forum ORDER BY datetime DESC";
-    $ForumQuery = $db->query($ForumSe);
-    $display = $ForumQuery->fetchAll();
+{
+  $ForumSe = "SELECT theme, posted, email, message, reply, datetime From forum ORDER BY datetime DESC";
+  $ForumQuery = $db->query($ForumSe);
+  $display = $ForumQuery->fetchAll();
+  return $display;
+}
+
+function ForumSes($db, $accounts)//會員中心使用
+{
+    $ForumSe = "SELECT theme, posted, email, message, reply, datetime From forum WHERE acccount='".$accounts."' ORDER BY datetime DESC";
+  $ForumQuery = $db->query($ForumSe);
+  $display = $ForumQuery->fetchAll();
+  return $display;
+}
+
+  function FavSe($db, $accounts){
+    $FavSe = "SELECT * FROM `favorite` WHERE `Account` = '".$accounts."'";
+    $FavQuery = $db->query($FavSe);
+    $display = $FavQuery->fetchAll();
     return $display;
   }
 ?>

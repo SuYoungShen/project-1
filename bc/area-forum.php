@@ -165,13 +165,13 @@ $(function(){
 									 <b class="arrow"></b>
 								 </li>
 
-								 <li class="active">
+								 <!-- <li class="active">
 									 <a href="area-forum.php">
 										 <i class="menu-icon fa fa-caret-right"></i>
 										 景點留言
 									 </a>
 									 <b class="arrow"></b>
-								 </li>
+								 </li> -->
 							 </ul>
 						 </li>
 

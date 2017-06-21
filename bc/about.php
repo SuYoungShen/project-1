@@ -133,7 +133,7 @@
 					<li class="">
 						<a href="view.php" >
 							<i class="menu-icon fa fa-tree"></i>
-							<span class="menu-text"> 景點介紹</span>
+							<span class="menu-text"> 景點</span>
 						</a>
 
 						<b class="arrow"></b>
@@ -159,14 +159,14 @@
 								<b class="arrow"></b>
 							</li>
 
-							<li class="">
+							<!-- <li class="">
 								<a href="area-forum.php">
 									<i class="menu-icon fa fa-caret-right"></i>
 									景點留言
 								</a>
 
 								<b class="arrow"></b>
-							</li>
+							</li> -->
 						</ul>
 					</li>
 
@@ -221,6 +221,7 @@
 						</div> -->
 						<!-- /.nav-search -->
 					</div>
+					<div class="hr hr-18 dotted hr-double"></div>
 
 					<div class="container-fluid">
 						<div class="row">
@@ -265,14 +266,14 @@
 
 						<div class="hr hr-18 dotted hr-double"></div>
 
-						<div class="row">
+						<!-- <div class="row"> -->
 							<!--輪放-->
-							<div class="page-header">
+							<!-- <div class="page-header">
 								<h1>輪放</h1>
-							</div><!-- /.page-header -->
+							</div> -->
 
 							<!--輪放-->
-							<div class="col-sm-4">
+							<!-- <div class="col-sm-4">
 								<div class="widget-box">
 									<div class="widget-header">
 										<h4 class="widget-title">上傳輪放照片</h4>
@@ -321,9 +322,9 @@
 									</div>
 								</div>
 							</div>
-						</div>
+						</div> -->
 
-						<div class="col-sm-8">
+						<!-- <div class="col-sm-8">
 							<div class="widget-box">
 								<div class="widget-header">
 									<h4 class="widget-title">輪放</h4>
@@ -351,21 +352,21 @@
 									<div class="widget-main">
 										<ul class="ace-thumbnails clearfix">
 											<?php
-											include("about/carousel.php");
+											//include("about/carousel.php");
 											?>
 										</ul>
-									</div><!-- PA5GE CONTENT ENDS -->
+									</div>
 								</div>
 							</div>
-						</div>
+						</div> -->
 						<!--輪放-->
-					</div>
+					<!-- </div> -->
 
 
-					<div class="hr hr-18 dotted hr-double"></div>
+					<!-- <div class="hr hr-18 dotted hr-double"></div> -->
 
 					<!--地區-->
-					<div class="row">
+					<!-- <div class="row">
 						<div class="col-sm-12">
 							<div class="table-header">
 								高雄地區
@@ -378,7 +379,7 @@
 							</div>
 
 							<!-- 地區 -->
-							<div class="table-responsive">
+							 <!-- <div class="table-responsive">
 								<table id="dynamic-table" class="table table-striped table-bordered table-hover">
 									<thead>
 										<tr>
@@ -397,19 +398,19 @@
 									</thead>
 									<tbody>
 										<?php
-										include("about/place.php");
+										//include("about/place.php");
 										?>
 									</tbody>
 								</table>
-							</div><!--table-responsive-->
+							</div>
 						</div>
-					</div><!--row-->
+					</div>  -->
 					<!--地區-->
 
-					<div class="hr hr-18 dotted hr-double"></div>
+					<!-- <div class="hr hr-18 dotted hr-double"></div> -->
 
 					<!--跑馬燈-->
-					<div class="row">
+					<!-- <div class="row">
 						<div class="col-sm-12">
 							<div class="widget-box">
 								<div class="widget-header">
@@ -437,13 +438,13 @@
 								<div class="widget-body">
 									<div class="widget-main">
 										<?php
-										include("about/marquee.php");
+										//include("about/marquee.php");
 										?>
 									</div>
 								</div>
 							</div>
 						</div>
-					</div><!--row-->
+					</div> -->
 
 					<!--跑馬燈-->
 

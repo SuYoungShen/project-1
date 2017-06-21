@@ -120,7 +120,7 @@
 					<li class="">
 						<a href="view.php">
 							<i class="menu-icon fa fa-tree"></i>
-							<span class="menu-text"> 景點介紹</span>
+							<span class="menu-text"> 景點</span>
 						</a>
 						<b class="arrow"></b>
 					</li>
@@ -143,13 +143,13 @@
 								<b class="arrow"></b>
 							</li>
 
-							<li class="">
+							<!-- <li class="">
 								<a href="area-forum.php">
 									<i class="menu-icon fa fa-caret-right"></i>
 									景點留言
 								</a>
 								<b class="arrow"></b>
-							</li>
+							</li> -->
 						</ul>
 					</li>
 

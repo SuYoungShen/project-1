@@ -1,6 +1,6 @@
 <?php
 
-  $dbname="project";
+  // $dbname="project";
   include("mysql/connect.php");
 
   $placeSe =$db->query(Place());

@@ -92,18 +92,20 @@
   //                                 )";
   //   return $ForumIn;
   // }
-  function ForumIn($themes, $posteds, $emails, $messages, $datetimes){
+  function ForumIn($themes, $posteds, $emails, $messages, $login_account, $datetimes){
     $ForumIn = "INSERT INTO `forum`(
                                     `theme`,
                                     `posted`,
                                     `email`,
                                     `message`,
+                                    `acccount`,
                                     `datetime`
                                   ) VALUES (
                                     '".$themes."',
                                     '".$posteds."',
                                     '".$emails."',
                                     '".$messages."',
+                                    '".$login_account."',
                                     '".$datetimes."'
                                   )";
     return $ForumIn;

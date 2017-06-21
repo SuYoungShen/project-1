@@ -1,4 +1,4 @@
-function Insert(account, placeName, picName, picDir, WebSite) {
+function Insert(account, placeName, picName, picDir) {
 
   if (account=="") {
     alert("請先登入會員");
@@ -10,10 +10,9 @@ function Insert(account, placeName, picName, picDir, WebSite) {
         'account':account,
         'placeName':placeName,
         'picName':picName,
-        'picDir':picDir,
-        'WebSite':WebSite
+        'picDir':picDir
       },
-      success:function(data){
+      success:function(data){      
         alert(data);//傳回成功訊息
       },
       error:function(data){//傳回失敗訊息

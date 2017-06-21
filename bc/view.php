@@ -113,7 +113,7 @@
 				<li class="active">
 					<a href="#" class="dropdown-toggle">
 						<i class="menu-icon fa fa-tree"></i>
-						<span class="menu-text"> 景點介紹</span>
+						<span class="menu-text"> 景點</span>
 					</a>
 
 					<b class="arrow"></b>
@@ -140,14 +140,14 @@
 							<b class="arrow"></b>
 						</li>
 
-						<li class="">
+						<!-- <li class="">
 							<a href="area-forum.php">
 								<i class="menu-icon fa fa-caret-right"></i>
 								景點留言
 							</a>
 
 							<b class="arrow"></b>
-						</li>
+						</li> -->
 					</ul>
 				</li>
 
@@ -190,7 +190,7 @@
 					</li>
 
 					<li>
-						<a href="#">景點介紹</a>
+						<a href="#">景點</a>
 					</li>
 					<li class="">景點首頁</li>
 				</ul><!-- /.breadcrumb -->
@@ -204,8 +204,72 @@
 					</form>
 				</div>--><!-- /.nav-search -->
 			</div><!--breadcrumbs-->
+			<div class="hr hr-18 dotted hr-double"></div>
 
 			<div class="container-fluid">
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+							<div class="panel panel-primary">
+								<div class="panel-heading" role="tab" id="headingOne">
+									<h4 class="panel-title">
+										<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+											新增地區
+										</a>
+									</h4>
+								</div>
+								<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+									<div class="panel-body">
+										<form class="form-horizontal" name="place"  role="form" method="post"
+														enctype="multipart/form-data" action="view/NewPlace.php">
+											<div class="form-group">
+												<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 地區名	 </label>
+
+												<div class="col-sm-9">
+													<input type="text" id="form-field-1" name="placeNames" placeholder="地區名" class="col-xs-10 col-sm-5" required="required"/>
+												</div>
+											</div>
+
+											<!-- <div class="form-group">
+												<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> 地區介紹 </label>
+
+												<div class="col-sm-9">
+													<textarea type="text" id="form-field-1-1" name="Introduction" placeholder="地區介紹" class="col-xs-10 col-sm-5" required="required"/></textarea>
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> 上傳圖檔 </label>
+												<div class="col-sm-8">
+													<input multiple="multiple" name="picName[]" type="file" id="id-input-file-4" />
+												</div>
+											</div> -->
+
+											<div class="space-4"></div>
+
+											<div class="clearfix form-actions">
+												<div class="col-md-offset-3 col-md-9">
+													<button class="btn btn-info" name="insert" type="submit">
+														<i class="ace-icon fa fa-check bigger-110"></i>
+														送出
+													</button>
+
+													&nbsp; &nbsp; &nbsp;
+													<button class="btn" type="reset">
+														<i class="ace-icon fa fa-undo bigger-110"></i>
+														重填
+													</button>
+
+												</div>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
 
 				<div class="hr hr-18 dotted hr-double"></div>
 
@@ -249,11 +313,12 @@
 						</div>
 					</div>
 				</div>
+
 				<!--景點-->
 
 				<div class="hr hr-18 dotted hr-double"></div>
 
-				<div class="page-header">
+				<!-- <div class="page-header">
 					<h1>各地區景點</h1>
 				</div>
 				<div class="row">
@@ -334,17 +399,17 @@
 							<div class="widget-main">
 								<ul class="ace-thumbnails clearfix">
 									<?php
-									include("view/view.php");
+									//include("view/view.php");
 									?>
 								</ul>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> -->
 
 			<!--跑馬燈-->
-			<div class="row">
+			<!-- <div class="row">
 				<div class="col-sm-12">
 					<div class="widget-box">
 						<div class="widget-header">
@@ -372,13 +437,13 @@
 						<div class="widget-body">
 							<div class="widget-main">
 								<?php
-								include("about/marquee.php");
+								// include("about/marquee.php");
 								?>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> -->
 			<!--跑馬燈-->
 
 		</div><!--container-fluid-->

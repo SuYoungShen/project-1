@@ -42,6 +42,7 @@
       }else {
         $accounts = "";
       }//加入我的最愛使用
+		
 	 ?>
 
 </head><!--/head-->
@@ -139,7 +140,12 @@
 						<a href="" class="btn btn-primary" data-toggle="modal" data-target="#blog-<?php echo $key;?>">放大</a>
 						<a href="" class="btn btn-danger">
 							<i class="fa fa-heart"
-								onclick="Insert('<?php echo $accounts;?>,<?php echo $value["place"]?>,<?php echo $value["name"];?>,<?php echo $DisplayTop[$key][path]?>')"></i>
+								onclick="Insert(
+																'<?php echo $accounts;?>',
+																'<?php echo $value["place"]?>',
+																'<?php echo $value["name"];?>',
+																'<?php echo $DisplayTop[$key][path]?>'
+																)"></i>
 						</a>
 
 					</div>
@@ -179,133 +185,6 @@
 					</ul><!--/#portfolio-filter-->
 					<div class="portfolio-items">
 						<?php include 'area/area.php'; ?>
-							<div class="col-sm-3 col-xs-12 portfolio-item jooma">
-								<div class="view efffect" >
-									<div class="portfolio-image">
-										<img src="images/portfolio/2.jpg" alt="">
-									</div>
-									<div class="mask text-center">
-										<h3>Novel</h3>
-										<h4>Lorem ipsum dolor sit amet consectetur</h4>
-										<a href="#"><i class="fa fa-link"></i></a>
-										<a href="images/portfolio/big-item4.jpg" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
-									</div>
-								</div>
-							</div>
-							<div class="col-sm-3 col-xs-12 portfolio-item wordpress">
-								<div class="view efffect">
-									<div class="portfolio-image">
-										<img src="images/portfolio/3.jpg" alt="">
-									</div>
-									<div class="mask text-center">
-										<h3>Novel</h3>
-										<h4>Lorem ipsum dolor sit amet consectetur</h4>
-										<a href="#"><i class="fa fa-link"></i></a>
-										<a href="images/portfolio/big-item.jpg" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
-									</div>
-								</div>
-							</div>
-							<div class="col-sm-3 col-xs-12 portfolio-item megento">
-								<div class="view efffect">
-									<div class="portfolio-image">
-										<img src="images/portfolio/4.jpg" alt="">
-									</div>
-									<div class="mask text-center">
-										<h3>Novel</h3>
-										<h4>Lorem ipsum dolor sit amet consectetur</h4>
-										<a href="#"><i class="fa fa-link"></i></a>
-										<a href="images/portfolio/big-item.jpg" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
-									</div>
-								</div>
-							</div>
-							<div class="col-sm-3 col-xs-12 portfolio-item html">
-								<div class="view efffect">
-									<div class="portfolio-image">
-										<img src="images/portfolio/5.jpg" alt="">
-									</div> <div class="mask text-center">
-										<h3>Novel</h3>
-										<h4>Lorem ipsum dolor sit amet consectetur</h4>
-										<a href="#"><i class="fa fa-link"></i></a>
-										<a href="images/portfolio/big-item.jpg" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
-									</div>
-								</div>
-							</div>
-							<div class="col-sm-3 col-xs-12 portfolio-item wordpress">
-								<div class="view efffect">
-									<div class="portfolio-image">
-										<img src="images/portfolio/6.jpg" alt="">
-									</div>
-									<div class="mask text-center">
-										<h3>Novel</h3>
-										<h4>Lorem ipsum dolor sit amet consectetur</h4>
-										<a href="#"><i class="fa fa-link"></i></a>
-										<a href="images/portfolio/big-item.jpg" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
-									</div>
-								</div>
-							</div>
-							<div class="col-sm-3 col-xs-12 portfolio-item html">
-								<div class="view efffect">
-									<div class="portfolio-image">
-										<img src="images/portfolio/7.jpg" alt="">
-									</div>
-									<div class="mask text-center">
-										<h3>Novel</h3>
-										<h4>Lorem ipsum dolor sit amet consectetur</h4>
-										<a href="#"><i class="fa fa-link"></i></a>
-										<a href="images/portfolio/big-item.jpg" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
-									</div>
-								</div>
-							</div>
-							<div class="col-sm-3 col-xs-12 portfolio-item joomla">
-								<div class="view efffect">
-									<div class="portfolio-image">
-										<img src="images/portfolio/8.jpg" alt=""></div>
-										<div class="mask text-center">
-											<h3>Novel</h3>
-											<h4>Lorem ipsum dolor sit amet consectetur</h4>
-											<a href="#"><i class="fa fa-link"></i></a>
-											<a href="images/portfolio/big-item.jpg" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
-										</div>
-								</div>
-							</div>
-							<div class="col-sm-3 col-xs-12 portfolio-item html">
-									<div class="view efffect">
-										<div class="portfolio-image">
-											<img src="images/portfolio/9.jpg" alt="">
-										</div>
-										<div class="mask text-center">
-											<h3>Novel</h3>
-											<h4>Lorem ipsum dolor sit amet consectetur</h4>
-											<a href="#"><i class="fa fa-link"></i></a>
-											<a href="images/portfolio/big-item.jpg" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
-										</div>
-									</div>
-								</div>
-							<div class="col-sm-3 col-xs-12 portfolio-item wordpress">
-									<div class="view efffect">
-										<div class="portfolio-image">
-											<img src="images/portfolio/10.jpg" alt=""></div>
-											<div class="mask text-center">
-												<h3>Novel</h3>
-												<h4>Lorem ipsum dolor sit amet consectetur</h4>
-												<a href="#"><i class="fa fa-link"></i></a>
-												<a href="images/portfolio/big-item.jpg" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
-											</div>
-										</div>
-								</div>
-							<div class="col-sm-3 col-xs-12 portfolio-item joomla">
-										<div class="view efffect">
-											<div class="portfolio-image">
-												<img src="images/portfolio/11.jpg" alt=""></div>
-												<div class="mask text-center">
-													<h3>Novel</h3>
-													<h4>Lorem ipsum dolor sit amet consectetur</h4>
-													<a href="#"><i class="fa fa-link"></i></a>
-													<a href="images/portfolio/big-item3.jpg" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a>
-												</div>
-											</div>
-									</div>
-
 					</div>
 				</div>
 			</section> <!--/#portfolio-->
@@ -348,20 +227,26 @@
 									<div id="contact-form-section">
 										<div class="status alert alert-success" style="display: none"></div>
 										<form id="contact-form" class="contact" name="contact-form" method="post" action="bc/message/forum/insert.php">
+											<?php
+												$MemberSe = MemberSe($accounts);
+												$MemberQu = $db->query($MemberSe);
+												$Di = $MemberQu->fetch();
+											 ?>
 											<div class="form-group">
 												<input type="text" name="theme" class="form-control name-field" required="required" placeholder="主題">
 											</div>
 											<div class="form-group">
-												<input type="text" name="posted" class="form-control name-field" required="required" placeholder="你的姓名">
+												<input type="text" name="posted" class="form-control name-field" required="required" value="<?php echo $Di["name"];?>" placeholder="你的姓名">
+												<input type="hidden" name="login_account" class="form-control name-field" value="<?php echo $accounts; ?>">
 											</div>
 											<div class="form-group">
-												<input type="email" name="email" class="form-control mail-field" required="required" placeholder="Your Email">
+												<input type="email" name="email" class="form-control mail-field" required="required" value="<?php echo $Di["email"];?>" placeholder="請輸入你的email">
 											</div>
 											<div class="form-group">
 												<textarea name="message" id="message" required="required" class="form-control" rows="8" placeholder="Message"></textarea>
 											</div>
 											<div class="form-group">
-												<button type="submit" class="btn btn-primary">Send</button>
+												<button type="submit" class="btn btn-primary">送出</button>
 											</div>
 										</form>
 									</div>

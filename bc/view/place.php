@@ -1,7 +1,7 @@
 <?php
 
-  $dbname="project";
-  include ("mysql/connect.php");
+  // $dbname="project";
+  // include ("mysql/connect.php");
   include ("common.php");
 
   $placeSe = $db->query(PlaceSe());//查詢資料表

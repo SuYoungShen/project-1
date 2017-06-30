@@ -32,7 +32,7 @@
 
 	<?php
 		session_start();
-		include 'bc/connect/connect.php';
+		include 'bc/mysql/connect.php';
 		include 'common.php';
 		include 'login/check_login.php';
 		Login($db);
@@ -183,7 +183,7 @@
 
 								<!-- <div class="contact-address">
 								</div> -->
-							</div>								
+							</div>
 							</div>
 						</div>
 					</div>

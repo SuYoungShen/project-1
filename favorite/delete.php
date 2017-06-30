@@ -1,5 +1,5 @@
 <?php
-  $dbname="project";
+  // $dbname="project";
   include("../bc/mysql/connect.php");
 
   $true = isset($_POST["Account"]) &&

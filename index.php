@@ -21,8 +21,10 @@
 	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
 	<link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
 
-	<script type="text/javascript" src="js/jquery.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
 	<script type="text/javascript" src="js/datatables.min.js"></script>
+	<script type="text/javascript" src="favorite/js/insert.js"></script>
 	<!-- <script type="text/javascript" src="login/js/registered.js"></script> -->
 	<script type="text/javascript" charset="utf-8">
 		$(document).ready(function() {
@@ -35,6 +37,7 @@
 		include 'bc/mysql/connect.php';
 		include 'common.php';
 		include 'login/check_login.php';
+		// include 'favorite/commons.php';
 		Login($db);
 		Login_Out();
 		if (isset($_SESSION["login_account"]) && !empty($_SESSION["login_account"])) {
@@ -42,7 +45,19 @@
       }else {
         $accounts = "";
       }//加入我的最愛使用
-
+			function SelectFa($db, $placeName, $account){
+		    $SF = "SELECT distinct(place) FROM `favorite` WHERE place='".$placeName."' AND  Account='".$account."'";
+		    //distinct 跟Group By 是一樣的
+		    $FQ = $db->query($SF);
+		    $DiF = $FQ->fetchAll();
+		    if (!empty($DiF)) {
+		      // echo "string";
+		      // var_dump($DiF);
+		      return true;//不等於空表示有資料
+		    }else {
+		      return false;//等於空表示沒資料
+		    }
+		  }
 	 ?>
 
 </head><!--/head-->
@@ -138,15 +153,29 @@
 							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
 						</div> -->
 						<a href="" class="btn btn-primary" data-toggle="modal" data-target="#blog-<?php echo $key;?>">放大</a>
-						<a href="" class="btn btn-danger">
-							<i class="fa fa-heart"
-								onclick="Insert(
-																'<?php echo $accounts;?>',
-																'<?php echo $value["place"]?>',
-																'<?php echo $value["name"];?>',
-																'<?php echo $DisplayTop[$key][path]?>'
-																)"></i>
-						</a>
+						<button name="addFa<?php echo $key;?>"  class="btn btn-default" onclick="Inserts(
+																														'<?php echo $value["place"];?>',
+																														'<?php echo $value["name"];?>',
+																														'<?php echo $DisplayTop[$key][path];?>',
+																														'<?php echo $accounts;?>',
+																														'<?php echo $key;?>'
+																														)">
+							<i class="fa fa-heart"></i>
+							<?php
+								$t = SelectFa($db, $value["place"], $accounts);
+								if ($t==true) {
+						      // echo "string";
+						      // var_dump($DiF);
+									echo "
+									<script type='text/javascript'>
+										ChangeDanger($key);//檔案在favorite/insert.js
+									</script>
+									";
+						    }else {
+
+						    }
+							 ?>
+						</button>
 
 					</div>
 					<div class="modal fade" id="blog-<?php echo $key;?>" tabindex="-1" role="dialog" aria-hidden="true">
@@ -223,34 +252,39 @@
 								<!-- <div class="contact-address">
 								</div> -->
 							</div>
-								<div class="col-sm-12">
-									<div id="contact-form-section">
-										<div class="status alert alert-success" style="display: none"></div>
-										<form id="contact-form" class="contact" name="contact-form" method="post" action="bc/message/forum/insert.php">
-											<?php
-												$MemberSe = MemberSe($accounts);
-												$MemberQu = $db->query($MemberSe);
-												$Di = $MemberQu->fetch();
-											 ?>
-											<div class="form-group">
-												<input type="text" name="theme" class="form-control name-field" required="required" placeholder="主題">
+							<?php
+							if (isset($_SESSION["login_account"]) && !empty($_SESSION["login_account"])) {
+								$MemberSe = MemberSe($accounts);
+								$MemberQu = $db->query($MemberSe);
+								$Di = $MemberQu->fetch();
+								echo "
+								<div class='col-sm-12'>
+									<div id='contact-form-section'>
+										<div class='status alert alert-success' style='display: none'></div>
+										<form id='contact-form' class='contact' name='contact-form' method='post' action='bc/message/forum/insert.php'>
+											<div class='form-group'>
+												<input type='text' name='theme' class='form-control name-field' required='required' placeholder='主題'>
 											</div>
-											<div class="form-group">
-												<input type="text" name="posted" class="form-control name-field" required="required" value="<?php echo $Di["name"];?>" placeholder="你的姓名">
-												<input type="hidden" name="login_account" class="form-control name-field" value="<?php echo $accounts; ?>">
+											<div class='form-group'>
+												<input type='text' name='posted' class='form-control name-field' required='required' value='".$Di['name']."' placeholder='你的姓名'>
+												<input type='hidden' name='login_account' class='form-control name-field' value='".$accounts."'>
 											</div>
-											<div class="form-group">
-												<input type="email" name="email" class="form-control mail-field" required="required" value="<?php echo $Di["email"];?>" placeholder="請輸入你的email">
+											<div class='form-group'>
+												<input type='email' name='email' class='form-control mail-field' required='required' value='".$Di['email']."' placeholder='請輸入你的email'>
 											</div>
-											<div class="form-group">
-												<textarea name="message" id="message" required="required" class="form-control" rows="8" placeholder="Message"></textarea>
+											<div class='form-group'>
+												<textarea name='message' id='message' required='required' class='form-control' rows='8' placeholder='Message'></textarea>
 											</div>
-											<div class="form-group">
-												<button type="submit" class="btn btn-primary">送出</button>
+											<div class='form-group'>
+												<button type='submit' class='btn btn-primary'>送出</button>
 											</div>
 										</form>
 									</div>
 								</div>
+								";
+								}
+							 ?>
+
 							</div>
 						</div>
 					</div>
@@ -491,15 +525,15 @@
 					</section>-->
 					<!--/#clients-->
 
-
 	<footer id="footer">
 		<div class="container">
 			<div class="text-center">
-				<p>Copyright &copy; 2014 - <a href="http://mostafiz.me/">Mostafiz</a> | All Rights Reserved</p>
+				<!-- <p>Copyright &copy; 2014 - <a href="http://mostafiz.me/">Mostafiz</a> | All Rights Reserved</p> -->
+				<p></p>
 			</div>
 		</div>
 	</footer> <!--/#footer-->
-	<script type="text/javascript" src="favorite/js/insert.js"></script>
+
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/smoothscroll.js"></script>
 	<script type="text/javascript" src="js/jquery.isotope.min.js"></script>

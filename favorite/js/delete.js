@@ -13,7 +13,7 @@ function Delete(Account, Place_Name, PicName,PicPath, Datetime) {//彈跳視窗
             'Datetime' : Datetime
           },
           success:function(data){
-            alert(data);//轉回指定葉面
+            alert(data);
             location.reload();
           },
           error:function(data){

@@ -64,10 +64,11 @@ function ForumSes($db, $accounts)//會員中心使用
   return $display;
 }
 
-  function FavSe($db, $accounts){
-    $FavSe = "SELECT * FROM `favorite` WHERE `Account` = '".$accounts."'";
-    $FavQuery = $db->query($FavSe);
-    $display = $FavQuery->fetchAll();
-    return $display;
-  }
+function FavSe($db, $accounts){//會員中心使用到,帳號登入後,查詢帳號所有加入的我的最愛
+  $FavSe = "SELECT * FROM `favorite` WHERE `Account` = '".$accounts."'";
+  $FavQuery = $db->query($FavSe);
+  $display = $FavQuery->fetchAll();
+  return $display;
+}
+
 ?>

@@ -6,7 +6,7 @@
       <div class="mask text-center">
         <h3><?php echo $value["viewpoint"]; ?></h3>
         <!-- <h4>Lorem ipsum dolor sit amet consectetur</h4> -->
-        <a href="#"><i class="fa fa-link"></i></a>
+        <!-- <a href="#"><i class="fa fa-link"></i></a> -->
         <!-- <a href="images/portfolio/big-item.jpg" data-gallery="prettyPhoto"><i class="fa fa-search-plus"></i></a> -->
         <a href="" data-toggle="modal" data-target="#area-<?php echo $key;?>"><i class="fa fa-search-plus"></i></a>
       </div>

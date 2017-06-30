@@ -124,7 +124,6 @@
 					<a href="#" class="dropdown-toggle">
 						<i class="menu-icon fa fa-bell icon-animated-bell"></i>
 						<span class="menu-text"> 留言 </span>
-
 						<b class="arrow fa fa-angle-down"></b>
 					</a>
 
@@ -136,7 +135,6 @@
 								<i class="menu-icon fa fa-caret-right"></i>
 								討論區
 							</a>
-
 							<b class="arrow"></b>
 						</li>
 
@@ -259,7 +257,6 @@
 														<i class="ace-icon fa fa-undo bigger-110"></i>
 														重填
 													</button>
-
 												</div>
 											</div>
 										</form>

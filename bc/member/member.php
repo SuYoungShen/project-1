@@ -1,6 +1,6 @@
 <?php
-  $dbname = "project";
-  include("mysql/connect.php");
+  // $dbname = "project";
+  // include("mysql/connect.php");
   include ("common.php");
 
   $memberse = $db->query(memberSelect());
@@ -54,7 +54,6 @@ foreach ($memberse as $key => $value) {
       <label class='pos-rel'>
         <input type='checkbox' class='ace'  value='".$accounts[$key]."'/>
         <span class='lbl'></span>
-
       </label>
     </td>
 

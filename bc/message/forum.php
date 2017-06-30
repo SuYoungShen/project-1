@@ -1,6 +1,6 @@
 <?php
-  $dbname="project";
-  include ("mysql/connect.php");
+  // $dbname="project";
+  // include ("mysql/connect.php");
   include ("common.php");
   $ForumSe = $db->query(ForumSe());
   $display = $ForumSe->fetchAll();
